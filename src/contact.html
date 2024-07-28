@@ -1,0 +1,102 @@
+<html>
+<head>
+  <title>Julia Ou: Contact</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <div class="container">
+
+    <div class="offscreen">
+      <img class="logo2" src="portfolio/logo.png">
+      <ul>
+        <li class="cat"><a href="index.html">Artworks</a></li>
+        <ul>
+          <li class="subcat"><a href="mixed.html">Mixed Media</a></li>
+          <li class="subcat"><a href="ceramics.html">Ceramics</a></li>
+          <li class="subcat"><a href="drawing.html">Drawing</a></li>
+        </ul>
+        <li class="cat"><a href="about.html">About Julia</a></li>
+        <li class="cat"><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <nav>
+      <div class = "menutext">
+        <p>Menu</p>
+      </div>
+      <div class="menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+
+    <img class="logo2" src="portfolio/logo.png">
+    <h2 class = "medtype">About</h2>
+
+    <div class="navbar"><!--navbar-->
+      <div class="dropdown" id="dropdown">
+        <a class="dropbtn" href="index.html">Artworks</a>
+        <div class="nav-button" id="dropdown-content">
+          <a href="mixed.html">Mixed</a>
+          <a href="ceramics.html">Ceramics</a>
+          <a href="drawing.html">Drawing</a>
+        </div>
+      </div>
+      <a href="about.html">
+        <div class="nav-button">About Julia</div>
+      </a>
+      <a href="contact.html">
+        <div class="nav-button">Contact</div>
+      </a>
+    </div> <!--navbar-->
+
+    <div class="aboutPage">
+      <p>If you would like to contact me:</p>
+      <p>Personal email: juliaou227@gmail.com</p>
+      <p>Personal number for messaging: +19732517798</p>
+    </div>
+
+    <div class="footer">
+      <p>Created by Julia Ou 2024</p>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <script>
+
+
+    //to filter the artwork
+    function filterCards(event) {
+      $('.filter-active').removeClass('filter-active');
+      var button = event.currentTarget;
+      var label = $(button).text();
+      $('.card').hide();
+      var selected = $(button).val();
+      $('.' + selected).show();
+      $(button).addClass('filter-active');
+    }
+    $('button').click(filterCards);
+
+    //hamburger menu
+    const menu = document.querySelector('.menu');
+    const offScreenMenu = document.querySelector('.offscreen');
+    const dropdownContent = document.getElementById('dropdown-content');
+    const dropButton = document.getElementsByClassName('dropbtn')
+    var slides = document.getElementsByClassName('slides');
+    var prevArrow = document.getElementsByClassName('prev');
+    var nextArrow = document.getElementsByClassName('next');
+
+    //when you click the hamburger menu
+    menu.addEventListener('click', () => {
+      menu.classList.toggle('active');
+      offScreenMenu.classList.toggle('active');
+      document.body.classList.toggle('menu-active');
+      //dropdownContent.style.display = 'none';
+    });
+
+  </script>
+</body>
+
+</html>
